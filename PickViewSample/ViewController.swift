@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         
-        pickerView.beganAt(component: 50, row: 49)
+        pickerView.beganFrom(component: 50, row: 49)
         
         //        let time: NSTimeInterval = 2.0
         //        let delay = dispatch_time(DISPATCH_TIME_NOW,

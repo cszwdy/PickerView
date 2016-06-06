@@ -49,20 +49,18 @@ final class PickerView: UIView {
         addSubview(c)
         collectionView = c
     }
-    
+}
+
+// MARK: - Public Methods
+extension PickerView {
     // began from component & index
-    func beganAt(component comp: Int, row: Int) {
+    func beganFrom(component comp: Int, row: Int) {
         componentIndexCache.changeAt(component: comp, row: row)
         if let attribute = collectionView.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: comp, inSection: 0)) {
             let center = attribute.center
             collectionView.setContentOffset(CGPoint(x: center.x - collectionView.bounds.width / 2, y: 0), animated: false)
         }
     }
-}
-
-// MARK: - Public Methods
-extension PickerView {
-    
 }
 
 // MARK: - CollectionViewDataSource
