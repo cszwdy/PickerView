@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -25,15 +26,25 @@
                                     <constraint firstAttribute="width" constant="320" id="mVv-vm-NjX"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 - 49" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-fh-0X1">
+                                <rect key="frame" x="98" y="125" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1eq-tF-jC1" firstAttribute="top" secondItem="ihP-fh-0X1" secondAttribute="bottom" constant="74" id="ISF-yg-IH5"/>
                             <constraint firstItem="1eq-tF-jC1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="Rrt-1q-ZoG"/>
                             <constraint firstItem="1eq-tF-jC1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nSE-tk-wh6"/>
+                            <constraint firstItem="ihP-fh-0X1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="82" id="piy-7h-Zgi"/>
+                            <constraint firstItem="ihP-fh-0X1" firstAttribute="centerX" secondItem="1eq-tF-jC1" secondAttribute="centerX" id="uZu-he-771"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="label" destination="ihP-fh-0X1" id="MBl-a9-qiI"/>
                         <outlet property="pickerView" destination="1eq-tF-jC1" id="yxu-U1-b1z"/>
                     </connections>
                 </viewController>

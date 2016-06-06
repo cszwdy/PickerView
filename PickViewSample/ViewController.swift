@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: PickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +65,7 @@ extension ViewController: PickerViewDataSource {
 
 extension ViewController: PickerViewDelegate {
     func pickerView(pickerView: PickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("did selected at (\(component), \(row))")
+            label.text = "\(component) - \(row)"
     }
 }
 
