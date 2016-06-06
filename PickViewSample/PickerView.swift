@@ -138,10 +138,54 @@ extension PickerView: UICollectionViewDataSource {
                 } else if let v = dataSource?.pickerView(self, viewForRow: indexPath.item, forComponent: component, reusingView: nil, actived: actived, componentActived: ca, rowActived: ra) {
                         cell.contentView.addSubview(v)
                         v.translatesAutoresizingMaskIntoConstraints = false
+                    if #available(iOS 9.0, *) {
                         v.topAnchor.constraintEqualToAnchor(cell.contentView.topAnchor).active = true
+                    } else {
+                        // Fallback on earlier versions
+                        if #available(iOS 8.0, *) {
+                            NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: cell.contentView, attribute: .Top, multiplier: 1.0, constant: 0).active = true
+                        } else {
+                            // Fallback on earlier versions
+                            let top = NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: cell.contentView, attribute: .Top, multiplier: 1.0, constant: 0)
+                            v.addConstraint(top)
+                        }
+                    }
+                    if #available(iOS 9.0, *) {
                         v.bottomAnchor.constraintEqualToAnchor(cell.contentView.bottomAnchor).active = true
+                    } else {
+                        // Fallback on earlier versions
+                        if #available(iOS 8.0, *) {
+                            NSLayoutConstraint(item: v, attribute: .Bottom, relatedBy: .Equal, toItem: cell.contentView, attribute: .Bottom, multiplier: 1.0, constant: 0).active = true
+                        } else {
+                            // Fallback on earlier versions
+                            let bottom = NSLayoutConstraint(item: v, attribute: .Bottom, relatedBy: .Equal, toItem: cell.contentView, attribute: .Bottom, multiplier: 1.0, constant: 0)
+                            v.addConstraint(bottom)
+                        }
+                    }
+                    if #available(iOS 9.0, *) {
                         v.leftAnchor.constraintEqualToAnchor(cell.contentView.leftAnchor).active = true
+                    } else {
+                        // Fallback on earlier versions
+                        if #available(iOS 8.0, *) {
+                            NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: cell.contentView, attribute: .Left, multiplier: 1.0, constant: 0).active = true
+                        } else {
+                            // Fallback on earlier versions
+                            let left = NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: cell.contentView, attribute: .Left, multiplier: 1.0, constant: 0)
+                            v.addConstraint(left)
+                        }
+                    }
+                    if #available(iOS 9.0, *) {
                         v.rightAnchor.constraintEqualToAnchor(cell.contentView.rightAnchor).active = true
+                    } else {
+                        // Fallback on earlier versions
+                        if #available(iOS 8.0, *) {
+                            NSLayoutConstraint(item: v, attribute: .Right, relatedBy: .Equal, toItem: cell.contentView, attribute: .Right, multiplier: 1.0, constant: 0).active = true
+                        } else {
+                            // Fallback on earlier versions
+                            let right = NSLayoutConstraint(item: v, attribute: .Right, relatedBy: .Equal, toItem: cell.contentView, attribute: .Right, multiplier: 1.0, constant: 0)
+                            v.addConstraint(right)
+                        }
+                    }
                         v.tag = 1000
                 }
             }
