@@ -147,7 +147,7 @@ extension PickerView: UICollectionViewDataSource {
                         } else {
                             // Fallback on earlier versions
                             let top = NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: cell.contentView, attribute: .Top, multiplier: 1.0, constant: 0)
-                            v.addConstraint(top)
+                            cell.contentView.addConstraint(top)
                         }
                     }
                     if #available(iOS 9.0, *) {
@@ -159,7 +159,7 @@ extension PickerView: UICollectionViewDataSource {
                         } else {
                             // Fallback on earlier versions
                             let bottom = NSLayoutConstraint(item: v, attribute: .Bottom, relatedBy: .Equal, toItem: cell.contentView, attribute: .Bottom, multiplier: 1.0, constant: 0)
-                            v.addConstraint(bottom)
+                            cell.contentView.addConstraint(bottom)
                         }
                     }
                     if #available(iOS 9.0, *) {
@@ -171,7 +171,7 @@ extension PickerView: UICollectionViewDataSource {
                         } else {
                             // Fallback on earlier versions
                             let left = NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: cell.contentView, attribute: .Left, multiplier: 1.0, constant: 0)
-                            v.addConstraint(left)
+                            cell.contentView.addConstraint(left)
                         }
                     }
                     if #available(iOS 9.0, *) {
@@ -183,7 +183,7 @@ extension PickerView: UICollectionViewDataSource {
                         } else {
                             // Fallback on earlier versions
                             let right = NSLayoutConstraint(item: v, attribute: .Right, relatedBy: .Equal, toItem: cell.contentView, attribute: .Right, multiplier: 1.0, constant: 0)
-                            v.addConstraint(right)
+                            cell.contentView.addConstraint(right)
                         }
                     }
                         v.tag = 1000
